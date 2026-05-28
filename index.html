@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minsu Kang | KENTECH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #fafaf9;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #5a5a5a;
+    --accent: #2563eb;
+    --border: #e5e5e5;
+    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
+  }
+  body {
+    font-family: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(250, 250, 249, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  nav .nav-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .brand {
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--accent); }
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  header.hero {
+    padding: 88px 32px 64px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .hero-row {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .avatar {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-weight: 600;
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+  }
+  .hero-text h1 {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .hero-text .role {
+    color: var(--text-muted);
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+  .hero-text .affiliation {
+    font-size: 15px;
+    color: var(--text-muted);
+  }
+  .hero-text .links {
+    margin-top: 14px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .hero-text .links a {
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .hero-text .links a:hover { text-decoration: underline; }
+  section {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+  }
+  section h2 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+  .about p {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 14px;
+    max-width: 680px;
+  }
+  .about p strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px 24px;
+    margin-top: 8px;
+    max-width: 680px;
+  }
+  .info-grid dt {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .info-grid dd {
+    font-size: 14px;
+    color: var(--text);
+  }
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    border-color: #d4d4d4;
+  }
+  .project-thumb {
+    width: 140px;
+    height: 100px;
+    background: linear-gradient(135deg, #10b981, #3b82f6);
+    border-radius: 8px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+  }
+  .project-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .project-info .meta {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .project-info .desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .project-info .tags {
+    margin-top: 12px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    font-size: 11px;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  .goals ul {
+    list-style: none;
+    max-width: 680px;
+  }
+  .goals li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .goals li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  footer {
+    padding: 40px 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  @media (max-width: 600px) {
+    .hero-row { gap: 24px; }
+    .avatar { width: 100px; height: 100px; font-size: 38px; }
+    .hero-text h1 { font-size: 28px; }
+    .info-grid { grid-template-columns: 1fr; gap: 4px; }
+    .info-grid dt { margin-top: 8px; }
+    .project-card { flex-direction: column; gap: 16px; }
+    .project-thumb { width: 100%; height: 120px; }
+    nav ul { gap: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand">Minsu Kang</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#goals">Goals</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-row">
+    <div class="avatar">M</div>
+    <div class="hero-text">
+      <h1>강민수 <span style="font-weight:400;color:var(--text-muted);font-size:24px;">Minsu Kang</span></h1>
+      <p class="role">Undergraduate Student · Class of 2023</p>
+      <p class="affiliation">School of Energy Engineering, KENTECH</p>
+      <p class="affiliation">Undergraduate Researcher · PEMs Lab (Proton Exchange Membrane)</p>
+      <div class="links">
+        <a href="#projects">Projects ↓</a>
+        <a href="mailto:your.email@example.com">Email</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="container about">
+  <h2>About Me</h2>
+  <p>
+    한국에너지공과대학교(KENTECH) 에너지공학부에 재학 중인 학부생입니다.
+    현재 <strong>PEMs Lab</strong>에서 학부연구생으로 활동하며 양성자 교환막(Proton Exchange Membrane)
+    관련 연구에 참여하고 있습니다.
+  </p>
+  <dl class="info-grid">
+    <dt>Affiliation</dt>
+    <dd>한국에너지공과대학교 (KENTECH)</dd>
+    <dt>Department</dt>
+    <dd>에너지공학부 · School of Energy Engineering</dd>
+    <dt>Class of</dt>
+    <dd>2023</dd>
+    <dt>Research Lab</dt>
+    <dd>PEMs Lab — Proton Exchange Membrane</dd>
+    <dt>Interests</dt>
+    <dd>수소 에너지, 연료전지, 데이터 기반 에너지 시스템</dd>
+  </dl>
+</section>
+
+<section id="projects" class="container">
+  <h2>Projects</h2>
+  <a href="project1.html" class="project-card">
+    <div class="project-thumb">♻️</div>
+    <div class="project-info">
+      <h3>Recycling Waste Classifier</h3>
+      <div class="meta">EF1003 Term Project 1 · 2026</div>
+      <p class="desc">
+        CNN 기반 6종 재활용 폐기물 자동 분류 모델. 1,800장의 자체 수집·전처리 이미지로 학습.
+      </p>
+      <div class="tags">
+        <span class="tag">CNN</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+  </a>
+</section>
+
+<section id="goals" class="container goals">
+  <h2>Long-term Goals</h2>
+  <ul>
+    <li>친환경 에너지 시스템(수소·연료전지)의 효율 향상에 기여하는 연구자가 되기</li>
+    <li>실험 데이터와 머신러닝을 융합한 에너지 소재 분석 역량 키우기</li>
+    <li>국제 학회 발표 및 SCI급 저널 논문 게재 경험 쌓기</li>
+    <li>대학원 진학 후 PEM 연료전지 분야 박사학위 취득</li>
+  </ul>
+</section>
+
+<footer>
+  © 2026 Minsu Kang · KENTECH School of Energy Engineering
+</footer>
+
+</body>
+</html>
