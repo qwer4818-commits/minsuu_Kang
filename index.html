@@ -418,6 +418,57 @@
     font-weight: 400;
   }
 
+  /* === Honors === */
+  .honors { background: var(--bg); text-align: center; padding: 100px 22px; }
+  .honors .section-title,
+  .honors .section-lead { margin-left: auto; margin-right: auto; }
+  .honors-card {
+    margin: 48px auto 0;
+    max-width: 640px;
+    background: var(--bg-alt);
+    border-radius: 22px;
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .honors-card::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -10%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(94, 92, 230, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .honors-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #5e5ce6 0%, #0071e3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    margin: 0 auto 20px;
+    position: relative;
+  }
+  .honors-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.022em;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .honors-card p {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    position: relative;
+  }
+
   /* === Projects (dark) === */
   .projects {
     background: var(--bg-dark);
@@ -754,6 +805,20 @@
           <span class="chip lang">English <span>· TOEIC 925</span></span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="honors" class="honors">
+  <div class="section-inner">
+    <p class="section-eyebrow fade-up">Honors &amp; Awards</p>
+    <h2 class="section-title fade-up">A chapter still being written.</h2>
+    <div class="honors-card fade-up">
+      <div class="honors-icon">✦</div>
+      <h3>No awards yet — and that's okay.</h3>
+      <p>
+        Focused on building the work first. Recognitions will be added as they come.
+      </p>
     </div>
   </div>
 </section>
